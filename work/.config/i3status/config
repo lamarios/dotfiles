@@ -1,0 +1,158 @@
+general {
+        colors = false
+        interval = 5	
+	separator = "  "
+}
+
+
+
+
+#order += "disk /"
+
+
+order += "cpu_usage"
+
+order += "volume master"
+
+order += "wireless wlp1s0"
+
+order += "ethernet enp0s31f6"
+order += "ethernet tun0"
+
+
+
+
+
+
+order += "tztime local"
+
+
+order += "battery 0"
+
+wireless wlp1s0 {
+
+        format_up = "  %essid (%ip)"
+
+        format_down = "  "
+
+}
+
+
+
+ethernet enp0s31f6 {
+
+        # if you use %speed, i3status requires the cap_net_admin capability
+
+        format_up = "  %ip"
+
+        format_down = "  "
+
+}
+
+ethernet tun0{
+
+        # if you use %speed, i3status requires the cap_net_admin capability
+
+        format_up = " "
+
+        format_down = " "
+
+}
+
+
+
+battery 0 {
+
+	last_full_capacity = true
+	integer_battery_capacity = true
+	hide_seconds = true
+        format = "%status %percentage"
+
+        format_down = ""
+
+        status_chr = ""
+
+        status_bat = ""
+
+#        status_unk = "? UNK"
+
+        status_full = ""
+
+        path = "/sys/class/power_supply/BAT%d/uevent"
+
+        low_threshold = 10
+
+}
+
+
+
+run_watch DHCP {
+
+        pidfile = "/var/run/dhclient*.pid"
+
+}
+
+
+
+run_watch VPNC {
+
+        # file containing the PID of a vpnc process
+
+        pidfile = "/var/run/vpnc/pid"
+
+}
+
+
+
+path_exists VPN {
+
+        # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+
+        path = "/proc/sys/net/ipv4/conf/tun0"
+
+}
+
+
+
+tztime local {
+
+        format = "  %Y-%m-%d %H:%M"
+
+}
+
+
+
+
+
+
+cpu_usage {
+
+	format = " %usage"
+
+}
+
+
+cpu_temperature 0 {
+
+        format = "T: %degrees Â°C"
+
+        path = "/sys/devices/platform/coretemp.0/temp1_input"
+
+}
+
+
+
+disk "/" {
+	prefix_type=decimal
+        format = " %free Free"
+
+}
+
+
+volume master {
+        format = " %volume"
+        format_muted = " muted (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
