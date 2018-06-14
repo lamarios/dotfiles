@@ -418,8 +418,9 @@ mode "$mode_gaps_inner" {
 
 ###Start up
 exec --no-startup-id /usr/lib/mate-settings-daemon/mate-settings-daemon
-exec_always --no-startup-id wal -i ~/Pictures/Wallpapers/
-exec compton --inactive-dim=0.6 --mark-ovredir-focused --no-fading-openclose
+exec_always --no-startup-id "sleep 5 && wal -i ~/Pictures/Wallpapers/"
+#exec compton --inactive-dim=0.6 --mark-ovredir-focused --no-fading-openclose -c -t=0 -l -15
+exec compton
 
 exec --no-startup-id nm-applet
 exec --no-startup-id fluxgui
