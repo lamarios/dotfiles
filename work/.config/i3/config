@@ -357,6 +357,7 @@ client.background       $bg
 
 
 bindsym $mod+d exec rofi -show combi 
+bindsym $mod+j exec jira
 bindsym $mod+Shift+d exec rofi -show window
 bindsym $mod+z exec rofi -show ssh
 bindsym $mod+Print exec scrot -d 1 -e 'shotwell $f'
