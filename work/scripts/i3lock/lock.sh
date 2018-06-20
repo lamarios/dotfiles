@@ -1,7 +1,7 @@
 #!/bin/bash
 BG=/tmp/screenshot.png
 scrot $BG
-convert $BG -swirl 360  -scale 5% -scale 2000%    $BG
+convert $BG -scale 5% -scale 2000%    $BG
 ~/scripts/i3lock-color/i3lock \
  --radius=200 \
 --ring-width=1 \
