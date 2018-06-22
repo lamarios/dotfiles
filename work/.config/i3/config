@@ -241,6 +241,8 @@ assign [class="Spotify"] $wp8
 assign [class="Mailspring"] $wp9
 assign [class="Cumulonimbus"] $wp8
 
+# Window specific behavior
+for_window [class="jetbrains-toolbox"] floating disable
 
 # reload the configuration file
 
@@ -357,7 +359,8 @@ client.background       $bg
 
 
 bindsym $mod+d exec rofi -show combi 
-bindsym $mod+j exec jira
+bindsym $mod+j exec ~/scripts/rofi-scripts/jira
+bindsym $mod+Shift+f exec ~/scripts/rofi-scripts/font-awesome
 bindsym $mod+Shift+d exec rofi -show window
 bindsym $mod+z exec rofi -show ssh
 bindsym $mod+Print exec scrot -d 1 -e 'shotwell $f'
