@@ -1,6 +1,7 @@
 #!/bin/bash
+SQL="SELECT b.title || \" | \" ||  p.url  FROM moz_bookmarks b JOIN moz_places p ON b.fk = p.id WHERE b.fk is not null AND b.title <> '' AND url <> '' AND url NOT LIKE 'place:%'"
 
-ENTRIES=$(sqlite3 /home/gz/.mozilla/firefox/7wzsnqfc.default/places.sqlite "SELECT b.title || \" | \" ||  p.url  FROM moz_bookmarks b JOIN moz_places p ON b.fk = p.id" | rofi -i -dmenu)
+ENTRIES=$(sqlite3 /home/gz/.mozilla/firefox/7wzsnqfc.default/places.sqlite "${SQL}" | rofi -i -dmenu -p "Firefox bookmarks")
 
 
 IFS='| ' 
