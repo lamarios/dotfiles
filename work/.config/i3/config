@@ -360,6 +360,7 @@ client.background       $bg
 
 bindsym $mod+d exec rofi -show combi 
 bindsym $mod+j exec ~/scripts/rofi-scripts/jira
+bindsym $mod+b exec ~/scripts/rofi-scripts/firefox
 bindsym $mod+Shift+f exec ~/scripts/rofi-scripts/font-awesome
 bindsym $mod+Shift+d exec rofi -show window
 bindsym $mod+z exec rofi -show ssh
