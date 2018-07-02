@@ -4,7 +4,7 @@ SQL="SELECT b.title || \" | \" ||  p.url  FROM moz_bookmarks b JOIN moz_places p
 ENTRIES=$(sqlite3 /home/gz/.mozilla/firefox/7wzsnqfc.default/places.sqlite "${SQL}" | rofi -i -dmenu -p "Firefox bookmarks")
 
 
-IFS='| ' 
+IFS=' | ' 
 read -ra ADDR <<< "$ENTRIES"
 for i in "${ADDR[@]}"; do
   URL=$i
