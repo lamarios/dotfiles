@@ -4,7 +4,7 @@ OUTPUT=/tmp/wall.png
 while [ true ]
 do
 	pscircle --output=$OUTPUT
-	wal -i $OUTPUT -o wal-set  && feh --bg-fill $(cat     ~/.cache/wal/wal)
+	 feh --bg-fill $OUTPUT
 	
-	sleep 60
+	sleep 5	
 done
