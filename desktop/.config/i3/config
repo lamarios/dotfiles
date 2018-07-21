@@ -418,14 +418,14 @@ mode "$mode_gaps_inner" {
 
 
 ###Start up
-exec_always wal -i ~/Pictures/Wallpapers/
+exec --no-startup-id /usr/lib/mate-settings-daemon/mate-settings-daemon
+exec_always --no-startup-id "sleep 2 && wal -i ~/Pictures/Wallpapers/"
 #exec compton --inactive-dim=0.6 --mark-ovredir-focused  --backend glx --no-fading-openclose --blur-background --blur-kern 7x7box
 #exec ~/scripts/compton-frost-blur/compton --inactive-dim=0.6 --mark-ovredir-focused --backend glx --vsync opengl-swc --no-fading-openclose --blur-background --blur-method kawase --blur-strength 15 -i 0.75
-exec ~/scripts/compton-frost-blur/compton
+exec --no-startup-id ~/scripts/compton-frost-blur/compton
 
-exec indicator-sound-switcher
-exec mate-settings-daemon
-exec nm-applet
+exec --no-startup-id indicator-sound-switcher
+exec --no-startup-id nm-applet
 exec --no-startup-id fluxgui
 exec --no-startup-id mate-power-manager
 
