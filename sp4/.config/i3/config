@@ -245,6 +245,8 @@ assign [class="Rhythmbox"] $wp8
 assign [class="MailSpring"] $wp9
 #assign [classs="crx_hnpfjngllnobngcgfapefoaidbinmjnm"] $wp10
 
+# Window specific behavior
+for_window [class="jetbrains-toolbox"] floating disable
 
 # reload the configuration file
 
@@ -417,8 +419,8 @@ mode "$mode_gaps_inner" {
 
 
 ###Start up
-exec --no-startup-id /usr/lib/mate-settings-daemon/mate-settings-daemon
-exec_always --no-startup-id "sleep 5 && wal -i ~/Pictures/Wallpapers/"
+exec --no-startup-id "/usr/lib/mate-settings-daemon/mate-settings-daemon"
+exec_always --no-startup-id  "sleep 2 && wal -i ~/Pictures/Wallpapers/"
 #exec compton --inactive-dim=0.6 --mark-ovredir-focused --no-fading-openclose -c -t=0 -l -15
 exec compton
 
