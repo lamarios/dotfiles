@@ -1,7 +1,7 @@
 rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
 #rofi.theme: ~/.cache/wal/colors-rofi-light.rasi
-rofi.combi-modi: run,drun
-rofi.modi: run,drun,combi
+rofi.combi-modi: run,drun,ssh
+rofi.modi: run,drun,ssh,combi
 rofi.font: System San Francisco Display 25
 rofi.padding: 10
 rofi.lines: 7

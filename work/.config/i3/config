@@ -426,9 +426,8 @@ mode "$mode_gaps_inner" {
 #set $wallpaper "/home/gz/Pictures/Wallpapers/FWY_2560x1600.jpg"
 
 ###Start up
-exec_always --no-startup-id pscircle --output=/tmp/wall.png && wal -i /tmp/wall.png -o wal-set  && feh --bg-fill $(cat ~/.cache/wal/wal)
-exec_always --no-startup-id /home/gz/dotfiles/work/scripts/pscircle.sh
-exec --no-startup-id ~/scripts/comptom-blur 
+exec_always --no-startup-id wal -i /home/gz/Pictures/Wallpapers -o wal-set  && feh --bg-fill $(cat ~/.cache/wal/wal)
+exec --no-startup-id compton 
 #exec --no-startup-id compton --inactive-dim=0.6 --mark-ovredir-focuse -c -r 10 -f --fade-delta=40 --fade-in-step=0.4 --fade-out-step=0.4
 #exec_always --no-startup-id ~/scripts/comptom-blur/compton --inactive-dim=0.6 --mark-ovredir-focuse -c -r 10  --fade-delta=40 --fade-in-step=0.4 --fade-out-step=0.4 -f  --backend glx --blur-method kawase --blur-strength 10 --blur-background
 #exec_always compton -c --mark-ovredir-focused
