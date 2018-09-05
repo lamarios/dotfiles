@@ -1,7 +1,8 @@
 #!/bin/bash
 SQL="SELECT b.title || \" | \" ||  p.url  FROM moz_bookmarks b JOIN moz_places p ON b.fk = p.id WHERE b.fk is not null AND b.title <> '' AND url <> '' AND url NOT LIKE 'place:%'"
 
-ENTRIES=$(sqlite3 ~/.mozilla/firefox/7wzsnqfc.default/places.sqlite "${SQL}" | rofi -i -dmenu -p "Firefox bookmarks")
+PROFILE_FOLDER=/home/gz/snap/firefox/common/.mozilla/firefox/v2uzj9h7.default""
+ENTRIES=$(sqlite3 ${PROFILE_FOLDER}/places.sqlite "${SQL}" | rofi -i -dmenu -p "Firefox bookmarks")
 
 
 IFS=' | ' 
