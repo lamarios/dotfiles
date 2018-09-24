@@ -53,7 +53,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 
 bindsym $mod+q kill
-bindsym $mod+l exec betterlockscreen -l "dimblur"
+bindsym $mod+l exec betterlockscreen -l "dim"
 
 
 
