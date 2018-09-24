@@ -53,7 +53,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 
 bindsym $mod+q kill
-bindsym $mod+l exec /home/gz/scripts/i3lock/lock.sh
+bindsym $mod+l exec betterlockscreen -l "dimblur"
 
 
 
@@ -243,6 +243,7 @@ assign [class="Cumulonimbus"] $wp8
 
 # Window specific behavior
 for_window [class="jetbrains-toolbox"] floating disable
+for_window [class="Peek"] floating enable
 
 # reload the configuration file
 
