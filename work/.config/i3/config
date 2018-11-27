@@ -356,10 +356,10 @@ set $border #111111
 
 # class                 border  backgr. text indicator child_border
 client.focused          $fg     $fg     $bg  $fg       $fg
-client.focused_inactive $border     $bg     $bg  $bg       $border
-client.unfocused        $border     $bg     $bg  $bg       $border
-client.urgent           $border     $bg     $bg  $bg       $border
-client.placeholder      $border     $bg     $bg  $bg       $border
+client.focused_inactive $border     $bg     $fg  $bg       $border
+client.unfocused        $border     $bg     $fg  $bg       $border
+client.urgent           $border     $bg     $fg  $bg       $border
+client.placeholder      $border     $bg     $fg  $bg       $border
 
 client.background       $bg
 
