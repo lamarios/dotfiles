@@ -1,0 +1,3 @@
+xrandr --dpi 130
+exec i3
+#exec mate-session

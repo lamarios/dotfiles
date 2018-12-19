@@ -1,0 +1,436 @@
+# i3 config file (v4)
+#
+
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+#
+
+# This config file uses keycodes (bindsym) and was written for the QWERTY
+
+# layout.
+
+#
+
+# To get a config file with the same key positions, but for your current
+
+# layout, use the i3-config-wizard
+
+#
+
+set $mod Mod4
+
+# Font for window titles. Will also be used by the bar unless a different font
+
+# is used in the bar {} block below. ISO 10646 = Unicode
+
+
+font pango:System San Francisco Display 13
+
+# The font above is very space-efficient, that is, it looks good, sharp and
+
+# clear in small sizes. However, if you need a lot of unicode glyphs or
+
+# right-to-left text rendering, you should instead use pango for rendering and
+
+# chose a FreeType font, such as:
+
+# font pango:DejaVu Sans Mono 10
+
+
+
+# use Mouse+$mod to drag floating windows to their wanted position
+
+floating_modifier $mod
+
+
+
+# start a terminal
+
+bindsym $mod+Return exec mate-terminal
+
+
+
+# kill focused window
+
+bindsym $mod+q kill
+bindsym $mod+l exec i3lock
+
+
+
+
+# There also is the (new) i3-dmenu-desktop which only displays applications
+
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+
+# installed.
+
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+
+
+# change focus
+
+#bindsym $mod+j focus left
+#
+#bindsym $mod+k focus down
+#
+#bindsym $mod+l focus up
+#
+#bindsym $mod+semicolon focus right
+
+
+
+# alternatively, you can use the cursor keys:
+
+bindsym $mod+Left focus left
+
+bindsym $mod+Down focus down
+
+bindsym $mod+Up focus up
+
+bindsym $mod+Right focus right
+
+
+
+# move focused window
+
+bindsym $mod+Shift+j move left
+
+bindsym $mod+Shift+k move down
+
+bindsym $mod+Shift+l move up
+
+bindsym $mod+Shift+semicolon move right
+
+#Move windows through screens
+
+bindsym $mod+m move workspace to output left
+
+# alternatively, you can use the cursor keys:
+
+bindsym $mod+Shift+Left move left
+
+bindsym $mod+Shift+Down move down
+
+bindsym $mod+Shift+Up move up
+
+bindsym $mod+Shift+Right move right
+
+#Move windows through screens
+
+bindsym $mod+Mod1+Left move workspace to output left
+
+bindsym $mod+Mod1+Down move workspace to output down
+
+bindsym $mod+Mod1+Up move workspace to output up
+
+bindsym $mod+Mod1+Right move workspace to output right
+
+
+
+# split in horizontal orientation
+
+bindsym $mod+h split h
+
+
+
+# split in vertical orientation
+
+bindsym $mod+v split v
+
+
+
+# enter fullscreen mode for the focused container
+
+bindsym $mod+f fullscreen
+
+
+
+# change container layout (stacked, tabbed, toggle split)
+
+bindsym $mod+s layout stacking
+
+bindsym $mod+w layout tabbed
+
+bindsym $mod+e layout toggle split
+
+
+
+# toggle tiling / floating
+
+bindsym $mod+Shift+space floating toggle
+
+
+# change focus between tiling / floating windows
+
+bindsym $mod+space focus mode_toggle
+
+
+
+# focus the parent container
+
+bindsym $mod+a focus parent
+
+
+
+# focus the child container
+
+#bindsym $mod+d focus child
+
+
+
+# move the currently focused window to the scratchpad
+
+bindsym $mod+Shift+minus move scratchpad
+
+
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+
+# If there are multiple scratchpad windows, this command cycles through them.
+
+bindsym $mod+minus scratchpad show
+
+
+
+set $wp1 "1      "
+set $wp2 "2      "
+set $wp3 "3      "
+set $wp4 "   4   "
+set $wp5 "   5   "
+set $wp6 "   6   "
+set $wp7 "7      "
+set $wp8 "8      "
+set $wp9 "9      "
+set $wp10 "10      "
+
+
+
+# switch to workspace
+
+bindsym $mod+1 workspace $wp1
+bindsym $mod+2 workspace $wp2
+bindsym $mod+3 workspace $wp3
+bindsym $mod+4 workspace $wp4
+bindsym $mod+5 workspace $wp5
+bindsym $mod+6 workspace $wp6
+bindsym $mod+7 workspace $wp7
+bindsym $mod+8 workspace $wp8
+bindsym $mod+9 workspace $wp9
+bindsym $mod+0 workspace $wp10
+
+# move focused container to workspace
+
+bindsym $mod+Shift+1 move container to workspace $wp1
+bindsym $mod+Shift+2 move container to workspace $wp2
+bindsym $mod+Shift+3 move container to workspace $wp3
+bindsym $mod+Shift+4 move container to workspace $wp4
+bindsym $mod+Shift+5 move container to workspace $wp5
+bindsym $mod+Shift+6 move container to workspace $wp6
+bindsym $mod+Shift+7 move container to workspace $wp7
+bindsym $mod+Shift+8 move container to workspace $wp8
+bindsym $mod+Shift+9 move container to workspace $wp9
+bindsym $mod+Shift+0 move container to workspace $wp10
+
+#Assign apps to workspaces
+assign [class="Google-chrome"] $wp2
+assign [class="Firefox"] $wp2
+assign [class="Toolbox"] $wp3
+assign [class="jetbrains-idea"] $wp3
+assign [class="Slack"] $wp10
+assign [class="Hiri"] $wp9
+assign [class="whatsapp-desktop"] $wp10
+assign [class="Spotify"] $wp8
+assign [class="Rhythmbox"] $wp8
+assign [class="MailSpring"] $wp9
+#assign [classs="crx_hnpfjngllnobngcgfapefoaidbinmjnm"] $wp10
+
+# Window specific behavior
+for_window [class="jetbrains-toolbox"] floating disable
+
+# reload the configuration file
+
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+
+# Pulse Audio controls
+ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# resize window (you can also use the mouse for that)
+
+mode "resize" {
+
+        # These bindings trigger as soon as you enter the resize mode
+
+
+
+        # Pressing left will shrink the window’s width.
+
+        # Pressing right will grow the window’s width.
+
+        # Pressing up will shrink the window’s height.
+
+        # Pressing down will grow the window’s height.
+
+        bindsym j           resize shrink width 10 px or 10 ppt
+
+        bindsym k           resize grow height 10 px or 10 ppt
+
+        bindsym l           resize shrink height 10 px or 10 ppt
+
+        bindsym semicolon   resize grow width 10 px or 10 ppt
+
+
+
+        # same bindings, but for the arrow keys
+
+        bindsym Left        resize shrink width 10 px or 10 ppt
+
+        bindsym Down        resize grow height 10 px or 10 ppt
+
+        bindsym Up          resize shrink height 10 px or 10 ppt
+
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+
+
+        # back to normal: Enter or Escape
+
+        bindsym Return mode "default"
+
+        bindsym Escape mode "default"
+
+}
+
+
+
+
+bindsym $mod+r mode "resize"
+
+mode "Brightness" {
+	bindsym plus exec xbacklight -inc 5
+	bindsym minus exec xbacklight -dec 5
+        # back to normal: Enter or Escape
+
+        bindsym Return mode "default"
+
+        bindsym Escape mode "default"
+	
+}
+
+bindsym $mod+b mode "Brightness"
+
+#new_window pixel 0
+set $border_width 3
+new_window pixel $border_width
+border pixel $border_width
+hide_edge_borders smart
+
+set_from_resource $fg i3wm.color3 #f0f0f0
+set_from_resource $bg i3wm.color0  #f0f0f0
+set $border #111111
+
+# class                 border  backgr. text indicator child_border
+client.focused          $fg     $fg     $bg  $fg       $fg
+client.focused_inactive $border     $bg     $fg  $bg       $border
+client.unfocused        $border     $bg     $fg  $bg       $border
+client.urgent           $border     $bg     $fg  $bg       $border
+client.placeholder      $border     $bg     $fg  $bg       $border
+
+client.background       $bg
+
+
+bindsym $mod+d exec rofi -show combi
+bindsym $mod+Shift+d exec rofi -show window
+bindsym $mod+z exec rofi -show ssh
+
+ 
+bindsym $mod+Print exec scrot -d 1 -e 'shotwell $f'
+bindsym $mod+Shift+Print exec scrot -u -d 1 -e 'shotwell $f'
+
+
+#bindsym $mod+d exec rofi -show run -fuzzy -font "System San Francisco Display 25" -padding 350 -line-margin 20 -lines 3 -fullscreen -color-window "$background,  $background,  $background" -color-normal "$background,  $status,  $background,  $focused,  $status" -color-active "$background,  $status,  $background,  $background,  $status" -color-urgent "$background,  $status,  $background,  $background,  $status"
+#bindsym $mod+d exec rofi  -show run -fuzzy -font "System San Francisco Display 25" -bg "$background" -bgalt "$background"  -bg-active "$background" -bg-urgent "$background" -hlbg "$focused"  -fg "$status" -padding 350 -bw 0 -line-margin 20 -lines 3 -fullscreen
+# Start i3bar to display a workspace bar (plus the system information i3status
+
+
+# finds out, if available)
+
+bar {
+	#height 80
+	strip_workspace_numbers yes
+	mode hide
+	tray_padding 7
+        status_command i3status
+	colors {
+	
+	  #     background $background
+		background $bg
+		statusline $fg
+		separator $bg
+	#               <colorclass>            <border>        <background>    <text>
+		focused_workspace       $fg             $fg             $bg
+		active_workspace        $fg             $fg             $bg
+		urgent_workspace        $fg             $fg             $bg
+		inactive_workspace      $bg             $bg             $fg
+
+		
+	}
+}
+
+###
+#GAPS
+##
+
+#gaps inner 10
+#gaps outer 0
+#smart_gaps on
+#
+#
+#set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+#bindsym $mod+Shift+g mode "$mode_gaps_inner"
+#
+#mode "$mode_gaps_inner" {
+#        bindsym plus  gaps inner current plus 5
+#        bindsym minus gaps inner current minus 5
+#        bindsym 0     gaps inner current set 0
+#
+#        bindsym Shift+plus  gaps inner all plus 5
+#        bindsym Shift+minus gaps inner all minus 5
+#        bindsym Shift+0     gaps inner all set 0
+#
+#        bindsym Return mode "default"
+#        bindsym Escape mode "default"
+#}
+
+
+###Start up
+exec --no-startup-id "/usr/lib/mate-settings-daemon/mate-settings-daemon"
+exec_always --no-startup-id  "sleep 2 && wal -i ~/Pictures/Wallpapers/"
+#exec compton --inactive-dim=0.6 --mark-ovredir-focused --no-fading-openclose -c -t=0 -l -15
+exec --no-startup-id compton
+
+exec --no-startup-id nm-applet
+#exec --no-startup-id fluxgui
+exec --no-startup-id mate-power-manager
+exec --no-startup-id mate-volume-control-applet
