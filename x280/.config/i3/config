@@ -262,13 +262,15 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 
 # Pulse Audio controls
- bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
- bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
- bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioMicMute exec --no-startup-id amixer set Capture toggle
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
+bindsym XF86Tools exec mate-control-center
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -327,19 +329,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-mode "Brightness" {
-	bindsym plus exec xbacklight -inc 5
-	bindsym minus exec xbacklight -dec 5
-        # back to normal: Enter or Escape
-
-        bindsym Return mode "default"
-
-        bindsym Escape mode "default"
-	
-}
-
-bindsym $mod+b mode "Brightness"
-
 #new_window pixel 0
 set $border_width 3
 new_window pixel $border_width
@@ -361,6 +350,8 @@ client.background       $bg
 
 
 bindsym $mod+d exec rofi -show combi
+bindsym $mod+Shift+f exec rofi-fontawesome
+bindsym $mod+b exec rofi-firefox
 bindsym $mod+Shift+d exec rofi -show window
 bindsym $mod+z exec rofi -show ssh
 
@@ -369,19 +360,16 @@ bindsym $mod+Print exec scrot -d 1 -e 'shotwell $f'
 bindsym $mod+Shift+Print exec scrot -u -d 1 -e 'shotwell $f'
 
 
-#bindsym $mod+d exec rofi -show run -fuzzy -font "System San Francisco Display 25" -padding 350 -line-margin 20 -lines 3 -fullscreen -color-window "$background,  $background,  $background" -color-normal "$background,  $status,  $background,  $focused,  $status" -color-active "$background,  $status,  $background,  $background,  $status" -color-urgent "$background,  $status,  $background,  $background,  $status"
-#bindsym $mod+d exec rofi  -show run -fuzzy -font "System San Francisco Display 25" -bg "$background" -bgalt "$background"  -bg-active "$background" -bg-urgent "$background" -hlbg "$focused"  -fg "$status" -padding 350 -bw 0 -line-margin 20 -lines 3 -fullscreen
 # Start i3bar to display a workspace bar (plus the system information i3status
 
 
 # finds out, if available)
 
 bar {
-	#height 80
 	strip_workspace_numbers yes
 	mode hide
 	tray_padding 7
-        status_command i3status
+        status_command i3-status-custom
 	colors {
 	
 	  #     background $background
@@ -426,11 +414,10 @@ bar {
 
 ###Start up
 exec --no-startup-id "/usr/lib/mate-settings-daemon/mate-settings-daemon"
-exec_always --no-startup-id  "sleep 2 && wal -i ~/Pictures/Wallpapers/"
-#exec compton --inactive-dim=0.6 --mark-ovredir-focused --no-fading-openclose -c -t=0 -l -15
+exec_always --no-startup-id  "wal -i ~/Pictures/Wallpapers/"
 exec --no-startup-id compton
 
 exec --no-startup-id nm-applet
-#exec --no-startup-id fluxgui
+exec --no-startup-id fluxgui
 exec --no-startup-id mate-power-manager
 exec --no-startup-id mate-volume-control-applet
