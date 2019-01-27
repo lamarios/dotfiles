@@ -352,7 +352,7 @@ client.background       $bg
 bindsym $mod+d exec rofi -show combi
 bindsym $mod+Shift+f exec rofi-fontawesome
 bindsym $mod+b exec rofi-firefox
-bindsym $mod+Shift+d exec rofi -show window
+bindsym $mod+Shift+d exec myrmidon
 bindsym $mod+z exec rofi -show ssh
 
  
