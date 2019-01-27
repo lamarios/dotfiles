@@ -1,8 +1,13 @@
 #!/bin/bash
 SQL="SELECT b.title || \" | \" ||  p.url  FROM moz_bookmarks b JOIN moz_places p ON b.fk = p.id WHERE b.fk is not null AND b.title <> '' AND url <> '' AND url NOT LIKE 'place:%'"
 
+if [ -z "${FIREFOX_PROFILE+x}" ]; then
+	echo "FIREFOX_PROFILE not set"
+	exit 1
+fi
 
-PROFILE_DB=/home/gz/.mozilla/firefox/aluzwhkp.default/places.sqlite
+
+PROFILE_DB=~/.mozilla/firefox/${FIREFOX_PROFILE}/places.sqlite
 TMP_PLACES=/tmp/places
 
 #avoiding db lock
