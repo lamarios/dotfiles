@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Wireguard up",
+    "command": "wg-start"
+  },
+  {
+    "name": "Wireguard down",
+    "command": "wg-stop"
+  },
+  {
+    "name": "Exit i3wm",
+    "confirm": true,
+    "command": "i3-msg exit"
+  },
+  {
+    "name": "Reboot",
+    "confirm": true,
+    "command": "systemctl reboot"
+  },
+  {
+    "name": "Power off",
+    "confirm": true,
+    "command": "systemctl poweroff"
+  }
+]
