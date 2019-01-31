@@ -21,8 +21,6 @@ type DotFile struct {
 func main() {
 	argsWithoutProg := os.Args[1:]
 
-	fmt.Println(argsWithoutProg[0])
-
 	if len(argsWithoutProg[0]) == 0 {
 		log.Fatal("Please specify directory")
 	}
@@ -31,24 +29,20 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(usr.HomeDir)
 
-	workdir, err := os.Getwd();
+	workdir, err := os.Getwd()
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	workdir = workdir + "/"
 
-	fmt.Println("work dir", workdir)
 	directory := argsWithoutProg[0] + "/"
 	directory = strings.Replace(directory, "//", "/", 1)
 
 	base := workdir + "/" + argsWithoutProg[0]
 
 	base, err = filepath.Abs(base)
-
-	fmt.Println("Base directory", base)
 
 	if _, err := os.Stat(directory); os.IsNotExist(err) {
 		log.Fatal(err)
@@ -60,8 +54,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	fmt.Println("Going to install desktop dotfiles in", directory)
 
 	var files []DotFile
 
@@ -131,7 +123,7 @@ func main() {
 
 func GetScripts(workDir string, homeDir string) ([]DotFile, error) {
 
-	var files []DotFile;
+	var files []DotFile
 	scriptFolder := workDir + "scripts"
 
 	err := filepath.Walk(scriptFolder,
@@ -148,7 +140,7 @@ func GetScripts(workDir string, homeDir string) ([]DotFile, error) {
 			return nil
 		})
 
-	return files, err;
+	return files, err
 }
 
 //Apply the config
