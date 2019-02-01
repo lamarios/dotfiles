@@ -351,8 +351,8 @@ bindsym $mod+Shift+d exec myrmidon.sh
 bindsym $mod+z exec rofi -show ssh
 
  
-bindsym $mod+Print exec scrot -d 1 -e 'shotwell $f'
-bindsym $mod+Shift+Print exec scrot -u -d 1 -e 'shotwell $f'
+bindsym $mod+Print exec scrot -d 1 -e 'gthumb $f'
+bindsym $mod+Shift+Print exec scrot -u -d 1 -e 'gthumb $f'
 
 
 #bindsym $mod+d exec rofi -show run -fuzzy -font "System San Francisco Display 25" -padding 350 -line-margin 20 -lines 3 -fullscreen -color-window "$background,  $background,  $background" -color-normal "$background,  $status,  $background,  $focused,  $status" -color-active "$background,  $status,  $background,  $background,  $status" -color-urgent "$background,  $status,  $background,  $background,  $status"
