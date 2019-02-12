@@ -1,0 +1,34 @@
+#!/bin/sh
+
+if [ -z ${JIRA_URL+x} ]; then
+	echo "Set \$JIRA_URL to your jira instance URL"
+fi
+
+if [ -z ${JQL+x} ]; then
+	echo "Set \$JQL variable to show a prefilled list of issues"
+fi
+
+if [ -z ${JIRA_AUTH+x} ]; then
+	echo "Set \$JIRA_AUTH to your jira Base64 encoded username:password "
+fi
+
+if [ -z ${JIRA_ALL_FILTER+x} ]; then
+	JIRA_ALL_FILTER=-1
+fi
+
+LIST=$(curl -G  "$JIRA_URL/rest/api/latest/search" -d 'fields=project.key' --data-urlencode "jql=$JQL" -H "Authorization: Basic $JIRA_AUTH" -H 'Content-Type: application/json' | jq -r '.issues[].key')
+
+LIST="All $LIST"
+
+ISSUE=$(echo $LIST |  rofi -dmenu -sep ' ' -i -p "Open jira issue")
+
+
+if [ -n "${ISSUE}" ]
+then
+	if [ "${ISSUE}" = "All" ]
+	then
+		xdg-open "$JIRA_URL/issues/?filter=$JIRA_ALL_FILTER"
+	else
+		xdg-open "$JIRA_URL/browse/${ISSUE}"
+	fi
+fi

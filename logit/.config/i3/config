@@ -53,7 +53,7 @@ bindsym $mod+Return exec mate-terminal
 # kill focused window
 
 bindsym $mod+q kill
-bindsym $mod+l exec i3lock
+bindsym $mod+l exec i3lock-fancy -g -p
 
 
 
@@ -238,6 +238,7 @@ assign [class="Firefox"] $wp2
 assign [class="Toolbox"] $wp3
 assign [class="jetbrains-idea"] $wp3
 assign [class="Slack"] $wp10
+assign [class="Skype"] $wp10
 assign [class="Hiri"] $wp9
 assign [class="whatsapp-desktop"] $wp10
 assign [class="Spotify"] $wp8
@@ -245,6 +246,7 @@ assign [class="Thunderbird"] $wp9
 
 # Window specific behavior
 for_window [class="jetbrains-toolbox"] floating disable
+for_window [class="Skype"] floating disable
 
 # reload the configuration file
 
@@ -350,6 +352,7 @@ client.background       $bg
 bindsym $mod+d exec rofi -show combi
 bindsym $mod+Shift+f exec rofi-fontawesome
 bindsym $mod+b exec rofi-firefox
+bindsym $mod+j exec rofi-jira
 bindsym $mod+Shift+d exec myrmidon
 bindsym $mod+z exec rofi -show ssh
 
@@ -416,6 +419,9 @@ exec_always --no-startup-id  "wal -i ~/Pictures/Wallpapers/"
 exec --no-startup-id compton
 
 exec --no-startup-id nm-applet
+exec --no-startup-id dunst
+exec --no-startup-id skype
+exec --no-startup-id slack
 exec --no-startup-id thunderbird
 #exec --no-startup-id fluxgui
 exec --no-startup-id mate-power-manager

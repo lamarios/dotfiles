@@ -17,7 +17,7 @@ order += "cpu_usage"
  order += "wireless wlp59s0"
 
 #order += "ethernet enp2s1"
-order += "ethernet tun0"
+#order += "ethernet tun0"
 order += "ethernet wg0"
 
 
