@@ -24,6 +24,13 @@ done
 if [[ $URL == http* ]]; then
 	echo "URL: '$URL'"
 else
+	WORDS=$(echo ${ENTRIES} | wc -w)
+
+	# we exit at empty string
+	if [ $WORDS -eq 0 ]; then
+		 exit 0
+	 fi
+
 	echo "${URL} is not url, using google search instead"
 	URL="https://www.google.com/search?q=${ENTRIES}"
 fi
