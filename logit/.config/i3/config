@@ -357,8 +357,8 @@ bindsym $mod+Shift+d exec myrmidon
 bindsym $mod+z exec rofi -show ssh
 
  
-bindsym $mod+Print exec scrot -d 1 -e 'shotwell $f'
-bindsym $mod+Shift+Print exec scrot -u -d 1 -e 'shotwell $f'
+bindsym $mod+Print exec scrot -d 1 -e 'shotwell $f' "$HOME/pix/%Y-%m-%d_%H:%M:%S.png"
+bindsym $mod+Shift+Print exec scrot -u -d 1 -e 'shotwell $f' "$HOME/pix/%Y-%m-%d_%H:%M:%S.png"
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -415,7 +415,7 @@ bar {
 
 ###Start up
 exec --no-startup-id "/usr/lib/mate-settings-daemon/mate-settings-daemon"
-exec_always --no-startup-id  "wal -i ~/Pictures/Wallpapers/"
+exec_always --no-startup-id  "wal -i ~/pix/Wallpapers/"
 exec --no-startup-id compton
 
 exec --no-startup-id nm-applet

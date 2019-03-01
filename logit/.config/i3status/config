@@ -14,7 +14,7 @@ order += "cpu_usage"
 
 # order += "volume master"
 
- order += "wireless wlp59s0"
+ order += "wireless wlp3s0"
 
 #order += "ethernet enp2s1"
 #order += "ethernet tun0"
@@ -31,7 +31,7 @@ order += "tztime local"
 #order += "battery 0"
 
 
-wireless wlp59s0 {
+wireless wlp3s0 {
 
         format_up = "  %essid"
 
