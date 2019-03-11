@@ -242,7 +242,7 @@ assign [class="Skype"] $wp10
 assign [class="Hiri"] $wp9
 assign [class="whatsapp-desktop"] $wp10
 assign [class="Spotify"] $wp8
-assign [class="Thunderbird"] $wp9
+assign [class="Mailspring"] $wp9
 
 # Window specific behavior
 for_window [class="jetbrains-toolbox"] floating disable
@@ -422,7 +422,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id skype
 exec --no-startup-id slack
-exec --no-startup-id thunderbird
+exec --no-startup-id mailspring
 #exec --no-startup-id fluxgui
 exec --no-startup-id mate-power-manager
 exec --no-startup-id mate-volume-control-applet
+exec --no-startup-id indicator-sound-switcher
