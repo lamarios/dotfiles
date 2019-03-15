@@ -109,5 +109,5 @@ source ~/.cache/wal/colors-tty.sh
 export PATH=$PATH:/snap/bin:~/.local/bin
 export EDITOR=vim
 
-
-alias docker-here='docker run -it -v "${PWD}:/app" -v "/root/.ssh:/root/.ssh" --workdir "/app"'
+alias copy="xclip -selection clipboard"
+alias docker-here='docker run -it -v "${PWD}:/app" -v "/usr/bin/docker:/usr/bin/docker"  -v "/var/run/docker.sock:/var/run/docker.sock" -v "/root/.ssh:/root/.ssh" --workdir "/app"'
