@@ -416,11 +416,11 @@ bar {
 
 ###Start up
 exec --no-startup-id "/usr/lib/mate-settings-daemon/mate-settings-daemon"
-exec_always --no-startup-id  "wal -i ~/pix/Wallpapers/"
+exec_always --no-startup-id  "wal -i ~/pix/Wallpapers/ -o wal-set"
 exec --no-startup-id compton
 
 exec --no-startup-id nm-applet
-exec --no-startup-id dunst
+#exec --no-startup-id dunst
 exec --no-startup-id skype
 exec --no-startup-id slack
 exec --no-startup-id mailspring
