@@ -356,6 +356,7 @@ bindsym $mod+b exec rofi-firefox
 bindsym $mod+j exec rofi-jira
 bindsym $mod+Shift+d exec myrmidon
 bindsym $mod+z exec rofi -show ssh
+bindsym $mod+n exec kill -s USR1 $(pidof deadd-notification-center)
 
  
 bindsym $mod+Print exec scrot -d 1 -e 'shotwell $f' "$HOME/pix/%Y-%m-%d_%H:%M:%S.png"
@@ -416,7 +417,9 @@ bar {
 
 ###Start up
 exec --no-startup-id "/usr/lib/mate-settings-daemon/mate-settings-daemon"
-exec_always --no-startup-id  "wal -i ~/pix/Wallpapers/ -o wal-set"
+#exec_always --no-startup-id  "wal -i ~/pix/Wallpapers/ -o wal-set"
+exec_always --no-startup-id  "wal -i ~/pix/Wallpapers/"
+exec --no-startup-id deadd-notification-center
 exec --no-startup-id compton
 
 exec --no-startup-id nm-applet
