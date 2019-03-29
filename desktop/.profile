@@ -24,3 +24,5 @@ export LC_MESSAGES="C"
 export LC_ALL=en_US.UTF-8
 
 export FIREFOX_PROFILE="0brydsln.default"
+export GOPATH=~/dev/go
+
