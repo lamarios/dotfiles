@@ -46,7 +46,7 @@ floating_modifier $mod
 
 # start a terminal
 
-bindsym $mod+Return exec mate-terminal
+bindsym $mod+Return exec urxvt
 
 
 
@@ -389,9 +389,9 @@ bar {
 #GAPS
 ##
 
-#gaps inner 10
-#gaps outer 0
-#smart_gaps on
+gaps inner 30
+gaps outer 0
+smart_gaps on
 
 
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -413,11 +413,15 @@ mode "$mode_gaps_inner" {
 
 ###Start up
 exec --no-startup-id /usr/lib/mate-settings-daemon/mate-settings-daemon
-exec_always --no-startup-id "sleep 2 && wal -i ~/Pictures/Wallpapers/"
 exec --no-startup-id compton
+exec_always --no-startup-id wal -i ~/Pictures/Wallpapers/ && sleep 2 && blurme
 
 exec --no-startup-id indicator-sound-switcher
 exec --no-startup-id nm-applet
 exec --no-startup-id fluxgui
-exec --no-startup-id mate-power-manager
+exec --no-startup-id autcutsel
+exec --no-startup-id autcutsel -s PRIMARY
+exec --no-startup-id deadd-notification-center
+
+
 
