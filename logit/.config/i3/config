@@ -332,19 +332,18 @@ bindsym $mod+r mode "resize"
 #new_window pixel 0
 set $border_width 3
 new_window pixel $border_width
-border pixel $border_width
+default_border pixel $border_width
 hide_edge_borders smart
 
 set_from_resource $fg i3wm.color3 #f0f0f0
 set_from_resource $bg i3wm.color0  #f0f0f0
-set $border #111111
 
 # class                 border  backgr. text indicator child_border
 client.focused          $fg     $fg     $bg  $fg       $fg
-client.focused_inactive $border     $bg     $fg  $bg       $border
-client.unfocused        $border     $bg     $fg  $bg       $border
-client.urgent           $border     $bg     $fg  $bg       $border
-client.placeholder      $border     $bg     $fg  $bg       $border
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
 
 client.background       $bg
 
@@ -418,7 +417,7 @@ smart_gaps on
 ###Start up
 exec --no-startup-id "/usr/lib/mate-settings-daemon/mate-settings-daemon"
 #exec_always --no-startup-id  "wal -i ~/pix/Wallpapers/ -o wal-set"
-exec_always --no-startup-id  "wal -i ~/pix/Wallpapers/"
+exec --no-startup-id  "wal -i ~/pix/Wallpapers/"
 exec --no-startup-id deadd-notification-center
 exec --no-startup-id compton
 
@@ -432,6 +431,5 @@ exec --no-startup-id mate-power-manager
 exec --no-startup-id mate-volume-control-applet
 exec --no-startup-id indicator-sound-switcher
 exec --no-startup-id blurme
-exec --no-startup-id autocutsel
-exec --no-startup-id autocutsel -s PRIMARY
+exec --no-startup-id clipit
 exec --no-startup-id /opt/OpenDrive/odrive
