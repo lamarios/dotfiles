@@ -106,7 +106,7 @@ cat ~/.cache/wal/sequences
 # To add support for TTYs this line can be optionally added.
 source ~/.cache/wal/colors-tty.sh
 
-export PATH=$PATH:/snap/bin:~/.local/bin
+export PATH=$PATH:/snap/bin:~/.local/bin:~/.gem/ruby/2.6.0/bin
 export EDITOR=vim
 
 alias copy="xclip -selection clipboard"

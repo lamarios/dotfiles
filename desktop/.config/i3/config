@@ -326,7 +326,7 @@ bindsym $mod+r mode "resize"
 #new_window pixel 0
 set $border_width 3
 new_window pixel $border_width
-border pixel $border_width
+default_border pixel $border_width
 hide_edge_borders smart
 
 
@@ -414,7 +414,7 @@ mode "$mode_gaps_inner" {
 ###Start up
 exec --no-startup-id /usr/lib/mate-settings-daemon/mate-settings-daemon
 exec --no-startup-id compton
-exec_always --no-startup-id wal -i ~/Pictures/Wallpapers/ && sleep 2 && blurme
+exec_always --no-startup-id wal -i ~/Pictures/Wallpapers/ -o  blurme
 
 exec --no-startup-id indicator-sound-switcher
 exec --no-startup-id nm-applet
