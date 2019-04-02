@@ -417,7 +417,7 @@ smart_gaps on
 ###Start up
 exec --no-startup-id "/usr/lib/mate-settings-daemon/mate-settings-daemon"
 #exec_always --no-startup-id  "wal -i ~/pix/Wallpapers/ -o wal-set"
-exec_always --no-startup-id  "wal -i ~/pix/Wallpapers/ -o blurme"
+exec --no-startup-id wal -i ~/pix/Wallpapers/ -o blurme
 exec --no-startup-id deadd-notification-center
 exec --no-startup-id compton
 
