@@ -9,4 +9,4 @@ rofi.line-margin: 2
 rofi.show-icons: true
 rofi.fuzzy: true
 rofi.ssh-client:           ssh
-rofi.ssh-command:          urxvt -e {ssh-client} {host}
+rofi.ssh-command:          termite -e "TERM=xterm-256color {ssh-client} {host}"

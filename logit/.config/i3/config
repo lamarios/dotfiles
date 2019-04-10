@@ -46,7 +46,7 @@ floating_modifier $mod
 
 # start a terminal
 
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec termite
 
 
 
@@ -417,12 +417,10 @@ smart_gaps on
 ###Start up
 exec --no-startup-id "/usr/lib/mate-settings-daemon/mate-settings-daemon"
 #exec_always --no-startup-id  "wal -i ~/pix/Wallpapers/ -o wal-set"
-exec --no-startup-id wal -i ~/pix/Wallpapers/ -o blurme
-exec --no-startup-id deadd-notification-center
+exec_always --no-startup-id  wal -i ~/pix/Wallpapers/
 exec --no-startup-id compton
 
 exec --no-startup-id nm-applet
-#exec --no-startup-id dunst
 exec --no-startup-id skype
 exec --no-startup-id slack
 exec --no-startup-id mailspring
