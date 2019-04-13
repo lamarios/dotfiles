@@ -46,7 +46,8 @@ scrollback_lines = 10000
 
 #foreground = #dcdccc
 #foreground_bold = #ffffff
-#background = rgba(0,0,0,0.9)
+#background = rgba(1,1,1,0)
+
 
 # 20% background transparency (requires a compositor)
 #background = rgba(63, 63, 63, 0.8)
