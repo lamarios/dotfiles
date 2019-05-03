@@ -46,7 +46,7 @@ floating_modifier $mod
 
 # start a terminal
 
-bindsym $mod+Return exec mate-terminal
+bindsym $mod+Return exec termite
 
 
 
@@ -390,9 +390,9 @@ bar {
 #GAPS
 ##
 
-#gaps inner 10
-#gaps outer 0
-#smart_gaps on
+gaps inner 10
+gaps outer 0
+smart_gaps on
 #
 #
 #set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
