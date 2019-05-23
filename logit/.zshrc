@@ -114,3 +114,4 @@ alias docker-here='docker run -it -v "${PWD}:/app" -v "/usr/bin/docker:/usr/bin/
 
 
 alias ssh="TERM=xterm-256color ssh"
+alias az="docker run -it -v \"/home/logit/dkr/azure:/root/.azure\"  microsoft/azure-cli bash"

@@ -32,7 +32,7 @@ else
 	 fi
 
 	echo "${URL} is not url, using google search instead"
-	URL="https://www.google.com/search?q=${ENTRIES}"
+	URL="https://searx.ftpix.com?q=${ENTRIES}"
 fi
 
 

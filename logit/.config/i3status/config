@@ -16,7 +16,7 @@ order += "cpu_usage"
 
  order += "wireless wlp3s0"
 
-#order += "ethernet enp2s1"
+order += "ethernet enp0s31f6"
 #order += "ethernet tun0"
 order += "ethernet wg0"
 
@@ -45,9 +45,9 @@ ethernet enp0s31f6 {
 
         # if you use %speed, i3status requires the cap_net_admin capability
 
-        format_up = "  "
+        format_up = "  %ip"
 
-        format_down = "  "
+        format_down = ""
 
 }
 
