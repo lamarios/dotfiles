@@ -2,5 +2,5 @@
 
 ICON=$(curl -s https://raw.githubusercontent.com/wstam88/rofi-fontawesome/master/icon-list.txt | rofi -dmenu -i -markup-rows -p "Search icon" -columns 6 -width 100 -location 1 -lines 20 -bw 2 -yoffset -2 | cut -d\' -f2 )
 
-echo "<i class=\"fa fa-$ICON\"></i>" | xclip -selection clipboard
+echo "<i class=\"fa fa-$ICON\" aria-hidden=\"true\"></i>" | xclip -selection clipboard
 
