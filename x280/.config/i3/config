@@ -273,7 +273,7 @@ bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
 bindsym XF86Tools exec mate-control-center
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
@@ -414,7 +414,7 @@ smart_gaps on
 
 ###Start up
 exec --no-startup-id "/usr/lib/mate-settings-daemon/mate-settings-daemon"
-exec_always --no-startup-id  "wal -i ~/Pictures/Wallpapers/"
+exec_always --no-startup-id  "wal -i ~/pix/Wallpapers/"
 exec --no-startup-id compton
 
 exec --no-startup-id nm-applet
