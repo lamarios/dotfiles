@@ -235,6 +235,7 @@ bindsym $mod+Shift+0 move container to workspace $wp10
 #Assign apps to workspaces
 assign [class="Google-chrome"] $wp2
 assign [class="Firefox"] $wp2
+assign [class="firefoxdeveloperedition"] $wp2
 assign [class="Toolbox"] $wp3
 assign [class="jetbrains-idea"] $wp3
 assign [class="Slack"] $wp10
@@ -348,6 +349,7 @@ client.background       $bg
 
 
 bindsym $mod+d exec rofi -show combi
+bindsym $mod+p exec bwmenu
 bindsym $mod+Shift+f exec rofi-fontawesome
 bindsym $mod+Shift+w exec rofi -show window
 bindsym $mod+b exec rofi-firefox
@@ -368,6 +370,7 @@ bindsym $mod+Shift+Print exec scrot -u -d 1 -e 'shotwell $f' "$HOME/pix/%Y-%m-%d
 
 bar {
 	strip_workspace_numbers yes
+	output primary
 	mode hide
 	tray_padding 7
         status_command i3-status-custom
@@ -432,3 +435,4 @@ exec --no-startup-id /opt/OpenDrive/odrive
 exec --no-startup-id sleep 10 && xmodmap ~/.Xmodmap
 exec --no-startup-id xflux -l 3.14 -g 101.6
 exec --no-startup-id seafile-applet
+#exec --no-startup-id polybar my-bar

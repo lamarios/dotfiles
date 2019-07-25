@@ -1,0 +1,2 @@
+#!/bin/sh
+ssh -R 8888:localhost:$1 k8master
