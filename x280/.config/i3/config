@@ -24,7 +24,7 @@ set $mod Mod4
 # is used in the bar {} block below. ISO 10646 = Unicode
 
 
-font pango:System San Francisco Display 13
+font pango:System San Francisco Display 0
 
 # The font above is very space-efficient, that is, it looks good, sharp and
 
@@ -366,6 +366,8 @@ bindsym $mod+Shift+Print exec scrot -u -d 1 -e 'shotwell $f'
 # finds out, if available)
 
 bar {
+	font pango:System San Francisco Display 10
+	output primary
 	strip_workspace_numbers yes
 	mode hide
 	tray_padding 7
@@ -417,7 +419,8 @@ exec --no-startup-id "/usr/lib/mate-settings-daemon/mate-settings-daemon"
 exec_always --no-startup-id  "wal -i ~/pix/Wallpapers/"
 exec --no-startup-id compton
 
-exec --no-startup-id nm-applet
 #exec --no-startup-id fluxgui
 exec --no-startup-id mate-power-manager
 exec --no-startup-id mate-volume-control-applet
+exec --no-startup-id xflux -l 3.1 -g 101.6
+exec_always --no-startup-id g610-led -a 60
