@@ -35,7 +35,11 @@ else
 	URL="https://searx.ftpix.com?q=${ENTRIES}"
 fi
 
-
-xdg-open "$URL"
+DEV_EDITION=$(ps aux | grep '[f]irefox-developer-edition' | wc -l)
+if [ ${DEV_EDITION} -eq 0 ]; then
+	firefox "$URL"
+else
+	firefox-developer-edition "$URL"
+fi
 
 rm ${TMP_PLACES}
