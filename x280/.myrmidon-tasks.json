@@ -13,6 +13,11 @@
     "command": "i3-msg exit"
   },
   {
+    "name": "Suspend",
+    "confirm": true,
+    "command": "systemctl suspend"
+  },
+  {
     "name": "Reboot",
     "confirm": true,
     "command": "systemctl reboot"
