@@ -240,7 +240,7 @@ assign [class="Toolbox"] $wp3
 assign [class="jetbrains-idea"] $wp3
 assign [class="Slack"] $wp10
 assign [class="Skype"] $wp10
-assign [class="whatsapp-desktop"] $wp10
+assign [class="whats-app-nativefier-d52542"] $wp10
 assign [class="Spotify"] $wp8
 assign [class="Evolution"] $wp9
 
@@ -330,7 +330,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #new_window pixel 0
-set $border_width 3
+set $border_width 0
 new_window pixel $border_width
 default_border pixel $border_width
 hide_edge_borders smart
@@ -355,8 +355,6 @@ bindsym $mod+Shift+w exec rofi -show window
 bindsym $mod+b exec rofi-firefox
 bindsym $mod+j exec rofi-jira
 bindsym $mod+Shift+d exec myrmidon
-bindsym $mod+z exec rofi -show ssh
-bindsym $mod+n exec kill -s USR1 $(pidof deadd-notification-center)
 
  
 bindsym $mod+Print exec scrot -d 1 -e 'shotwell $f' "$HOME/pix/%Y-%m-%d_%H:%M:%S.png"
@@ -397,6 +395,7 @@ bar {
 
 gaps inner 30
 gaps outer 0
+border_radius 5
 smart_gaps on
 #
 #
