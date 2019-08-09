@@ -357,8 +357,8 @@ bindsym $mod+j exec rofi-jira
 bindsym $mod+Shift+d exec myrmidon
 
  
-bindsym $mod+Print exec scrot -d 1 -e 'shotwell $f' "$HOME/pix/%Y-%m-%d_%H:%M:%S.png"
-bindsym $mod+Shift+Print exec scrot -u -d 1 -e 'shotwell $f' "$HOME/pix/%Y-%m-%d_%H:%M:%S.png"
+bindsym $mod+Print exec pkill compton &&  scrot -d 1 -e 'shotwell $f &' "$HOME/pix/%Y-%m-%d_%H:%M:%S.png" && compton &
+bindsym $mod+Shift+Print exec pkill compton && scrot -u -d 1 -e 'shotwell $f &' "$HOME/pix/%Y-%m-%d_%H:%M:%S.png" && compton &
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -369,8 +369,10 @@ bindsym $mod+Shift+Print exec scrot -u -d 1 -e 'shotwell $f' "$HOME/pix/%Y-%m-%d
 bar {
 	font pango:System San Francisco Display 11
 	strip_workspace_numbers yes
-	output primary
+
 	mode hide
+	workspace_buttons yes
+	tray_output primary
 	tray_padding 7
         status_command i3-status-custom
 	colors {
