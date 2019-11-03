@@ -1,11 +1,11 @@
 [
   {
     "name": "Wireguard up",
-    "command": "wg-start"
+    "command": "sudo wg-quick up wg0"
   },
   {
     "name": "Wireguard down",
-    "command": "wg-stop"
+    "command": "sudo wg-quick down wg0"
   },
   {
     "name": "Exit i3wm",

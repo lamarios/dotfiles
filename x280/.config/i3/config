@@ -242,7 +242,7 @@ assign [class="Hiri"] $wp9
 assign [class="whatsapp-desktop"] $wp10
 assign [class="Spotify"] $wp8
 assign [class="Rhythmbox"] $wp8
-assign [class="MailSpring"] $wp9
+assign [class="Thunderbird"] $wp9
 #assign [classs="crx_hnpfjngllnobngcgfapefoaidbinmjnm"] $wp10
 
 # Window specific behavior
