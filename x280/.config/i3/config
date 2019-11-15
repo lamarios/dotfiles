@@ -234,7 +234,7 @@ bindsym $mod+Shift+0 move container to workspace $wp10
 
 #Assign apps to workspaces
 assign [class="Google-chrome"] $wp2
-assign [class="Firefox"] $wp2
+assign [class="firefox"] $wp2
 assign [class="Toolbox"] $wp3
 assign [class="jetbrains-idea"] $wp3
 assign [class="Slack"] $wp10
@@ -242,7 +242,7 @@ assign [class="Hiri"] $wp9
 assign [class="whatsapp-desktop"] $wp10
 assign [class="Spotify"] $wp8
 assign [class="Rhythmbox"] $wp8
-assign [class="MailSpring"] $wp9
+assign [class="Thunderbird"] $wp9
 #assign [classs="crx_hnpfjngllnobngcgfapefoaidbinmjnm"] $wp10
 
 # Window specific behavior
@@ -330,7 +330,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #new_window pixel 0
-set $border_width 3
+set $border_width 0
 new_window pixel $border_width
 default_border pixel $border_width
 hide_edge_borders smart
@@ -356,8 +356,8 @@ bindsym $mod+Shift+d exec myrmidon
 bindsym $mod+z exec rofi -show ssh
 
  
-bindsym $mod+Print exec scrot -d 1 -e 'shotwell $f'
-bindsym $mod+Shift+Print exec scrot -u -d 1 -e 'shotwell $f'
+bindsym $mod+Print exec pkill compton && scrot -d 1 -e 'shotwell $f &' && compton &
+bindsym $mod+Shift+Print exec pkill compton && scrot -u -d 1 -e 'shotwell $f &' && compton & 
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -367,7 +367,6 @@ bindsym $mod+Shift+Print exec scrot -u -d 1 -e 'shotwell $f'
 
 bar {
 	font pango:System San Francisco Display 10
-	output primary
 	strip_workspace_numbers yes
 	mode hide
 	tray_padding 7
@@ -395,6 +394,7 @@ bar {
 gaps inner 10
 gaps outer 0
 smart_gaps on
+border_radius 5
 #
 #
 #set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)

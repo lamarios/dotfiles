@@ -108,3 +108,4 @@ source ~/.cache/wal/colors-tty.sh
 
 export PATH=$PATH:/snap/bin:~/.local/bin
 export EDITOR=vim
+export JAVA_HOME=/usr/lib/jvm/java-12-openjdk
