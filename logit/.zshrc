@@ -110,6 +110,7 @@ export PATH=$PATH:/snap/bin:~/.local/bin:~/.gem/ruby/2.6.0/bin
 export EDITOR=vim
 
 alias copy="xclip -selection clipboard"
+alias open="xdg-open"
 alias docker-here='docker run -it -v "${PWD}:/app" -v "/usr/bin/docker:/usr/bin/docker"  -v "/var/run/docker.sock:/var/run/docker.sock" -v "/root/.ssh:/root/.ssh" --workdir "/app"'
 
 

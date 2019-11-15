@@ -242,7 +242,7 @@ assign [class="Slack"] $wp10
 assign [class="Skype"] $wp10
 assign [class="whats-app-nativefier-d52542"] $wp10
 assign [class="Spotify"] $wp8
-assign [class="Evolution"] $wp9
+assign [class="Thunderbird"] $wp9
 
 # Window specific behavior
 for_window [class="jetbrains-toolbox"] floating disable
@@ -357,8 +357,8 @@ bindsym $mod+j exec rofi-jira
 bindsym $mod+Shift+d exec myrmidon
 
  
-bindsym $mod+Print exec pkill compton &&  scrot -d 1 -e 'shotwell $f &' "$HOME/pix/%Y-%m-%d_%H:%M:%S.png" && compton &
-bindsym $mod+Shift+Print exec pkill compton && scrot -u -d 1 -e 'shotwell $f &' "$HOME/pix/%Y-%m-%d_%H:%M:%S.png" && compton &
+bindsym $mod+Print exec pkill compton &&  scrot -d 1 -e 'shotwell $f &' "$HOME/pix/%Y-%m-%d_%H-%M-%S.png" && compton &
+bindsym $mod+Shift+Print exec pkill compton && scrot -u -d 1 -e 'shotwell $f &' "$HOME/pix/%Y-%m-%d_%H-%M-%S.png" && compton &
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -427,8 +427,7 @@ exec --no-startup-id compton
 #exec --no-startup-id nm-applet
 exec --no-startup-id skype
 exec --no-startup-id slack
-exec --no-startup-id evolution
-#exec --no-startup-id fluxgui
+exec --no-startup-id thunderbird
 exec --no-startup-id mate-power-manager
 exec --no-startup-id mate-volume-control-applet
 exec --no-startup-id indicator-sound-switcher
@@ -436,5 +435,3 @@ exec --no-startup-id clipit
 exec --no-startup-id /opt/OpenDrive/odrive
 exec --no-startup-id sleep 10 && xmodmap ~/.Xmodmap
 exec --no-startup-id xflux -l 3.14 -g 101.6
-exec --no-startup-id seafile-applet
-#exec --no-startup-id polybar my-bar
