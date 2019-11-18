@@ -357,8 +357,8 @@ bindsym $mod+j exec rofi-jira
 bindsym $mod+Shift+d exec myrmidon
 
  
-bindsym $mod+Print exec pkill compton &&  scrot -d 1 -e 'shotwell $f &' "$HOME/pix/%Y-%m-%d_%H-%M-%S.png" && compton &
-bindsym $mod+Shift+Print exec pkill compton && scrot -u -d 1 -e 'shotwell $f &' "$HOME/pix/%Y-%m-%d_%H-%M-%S.png" && compton &
+bindsym $mod+Print exec pkill picom &&  scrot -d 1 -e 'shotwell $f &' "$HOME/pix/%Y-%m-%d_%H-%M-%S.png" && picom &
+bindsym $mod+Shift+Print exec pkill picom && scrot -u -d 1 -e 'shotwell $f &' "$HOME/pix/%Y-%m-%d_%H-%M-%S.png" && picom &
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -422,7 +422,7 @@ smart_gaps on
 exec --no-startup-id "/usr/lib/mate-settings-daemon/mate-settings-daemon"
 #exec_always --no-startup-id  "wal -i ~/pix/Wallpapers/ -o wal-set"
 exec_always --no-startup-id  wal -i ~/pix/Wallpapers/
-exec --no-startup-id compton
+exec --no-startup-id picom
 
 #exec --no-startup-id nm-applet
 exec --no-startup-id skype
