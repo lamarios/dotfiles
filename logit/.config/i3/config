@@ -422,7 +422,7 @@ smart_gaps on
 exec --no-startup-id "/usr/lib/mate-settings-daemon/mate-settings-daemon"
 #exec_always --no-startup-id  "wal -i ~/pix/Wallpapers/ -o wal-set"
 exec_always --no-startup-id  wal -i ~/pix/Wallpapers/
-exec --no-startup-id picom
+exec_always --no-startup-id  pkill picom; picom
 
 #exec --no-startup-id nm-applet
 exec --no-startup-id skype
