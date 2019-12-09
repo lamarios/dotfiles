@@ -330,7 +330,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #new_window pixel 0
-set $border_width 0
+set $border_width 1
 new_window pixel $border_width
 default_border pixel $border_width
 hide_edge_borders smart
@@ -357,9 +357,11 @@ bindsym $mod+j exec rofi-jira
 bindsym $mod+Shift+d exec myrmidon
 
  
-bindsym $mod+Print exec pkill picom &&  scrot -d 1 -e 'shotwell $f &' "$HOME/pix/%Y-%m-%d_%H-%M-%S.png" && picom &
-bindsym $mod+Shift+Print exec pkill picom && scrot -u -d 1 -e 'shotwell $f &' "$HOME/pix/%Y-%m-%d_%H-%M-%S.png" && picom &
+bindsym $mod+print   scrot -d 1 -e 'shotwell $f &' "$home/pix/%y-%m-%d_%h-%m-%s.png"  &
+bindsym $mod+shift+print  scrot -u -d 1 -e 'shotwell $f &' "$home/pix/%y-%m-%d_%h-%m-%s.png" &
 
+#bindsym $mod+print exec pkill picom &&  scrot -d 1 -e 'shotwell $f &' "$home/pix/%y-%m-%d_%h-%m-%s.png" && picom &
+#bindsym $mod+shift+print exec pkill picom && scrot -u -d 1 -e 'shotwell $f &' "$home/pix/%y-%m-%d_%h-%m-%s.png" && picom &
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 
@@ -422,7 +424,7 @@ smart_gaps on
 exec --no-startup-id "/usr/lib/mate-settings-daemon/mate-settings-daemon"
 #exec_always --no-startup-id  "wal -i ~/pix/Wallpapers/ -o wal-set"
 exec_always --no-startup-id  wal -i ~/pix/Wallpapers/
-exec_always --no-startup-id  pkill picom; picom
+#exec_always --no-startup-id  pkill picom; picom
 
 #exec --no-startup-id nm-applet
 exec --no-startup-id skype
