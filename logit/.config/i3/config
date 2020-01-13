@@ -399,7 +399,7 @@ bar {
 
 gaps inner 30
 gaps outer 0
-border_radius 5
+
 smart_gaps on
 #
 #
