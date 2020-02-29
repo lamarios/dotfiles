@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if ping -c 1 192.168.42.99 -i 5 > /dev/null
+then
+	echo "We're connected to nebula network"
+else
+	echo "we're not connected to nebula network, connecting..."
+	systemctl stop nebula.service
+	systemctl start nebula.service
+fi
+
