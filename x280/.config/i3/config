@@ -330,7 +330,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #new_window pixel 0
-set $border_width 0
+set $border_width 1
 new_window pixel $border_width
 default_border pixel $border_width
 hide_edge_borders smart
@@ -356,8 +356,8 @@ bindsym $mod+Shift+d exec myrmidon
 bindsym $mod+z exec rofi -show ssh
 
  
-bindsym $mod+Print exec pkill compton && scrot -d 1 -e 'shotwell $f &' && compton &
-bindsym $mod+Shift+Print exec pkill compton && scrot -u -d 1 -e 'shotwell $f &' && compton & 
+bindsym $mod+Print exec  scrot -d 1 -e 'shotwell $f &'
+bindsym $mod+Shift+Print exec  scrot -u -d 1 -e 'shotwell $f &' 
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -394,7 +394,6 @@ bar {
 gaps inner 10
 gaps outer 0
 smart_gaps on
-border_radius 5
 #
 #
 #set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -417,7 +416,6 @@ border_radius 5
 ###Start up
 exec --no-startup-id "/usr/lib/mate-settings-daemon/mate-settings-daemon"
 exec_always --no-startup-id  "wal -i ~/pix/Wallpapers/"
-exec --no-startup-id compton
 
 #exec --no-startup-id fluxgui
 exec --no-startup-id mate-power-manager
