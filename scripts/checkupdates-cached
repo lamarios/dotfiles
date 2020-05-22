@@ -1,0 +1,30 @@
+#!/bin/sh
+
+TIME_FILE=~/.cache/checkupdates-checktime
+CACHE_FILE=~/.cache/checkupdates-cache
+
+
+if [ ! -f "$TIME_FILE" ]; then
+    echo "0" > ${TIME_FILE}
+fi
+
+
+if [ ! -f "$CACHE_FILE" ]; then
+    echo "0" > ${CACHE_FILE}
+fi
+
+#Only check update every hour
+TIME=$(date +%s)
+OLD_TIME=$(cat ${TIME_FILE})
+TIME_DIFF=$(expr ${TIME} - ${OLD_TIME})
+
+
+if [ $TIME_DIFF -gt 3600 ]; then
+	UPDATES=$(checkupdates | wc -l)
+	echo "${UPDATES}" > ${CACHE_FILE}
+	echo $TIME > $TIME_FILE
+else
+	UPDATES=$(cat ${CACHE_FILE})
+fi
+
+echo $UPDATES

@@ -1,0 +1,62 @@
+#!/bin/sh
+
+
+
+while [[ $# -gt 0 ]]
+do
+key="$1"
+
+case $key in
+    -c|--command)
+    COMMAND="$2"
+    shift # past argument
+    shift # past value
+    ;;
+    -t|--timecached)
+    TIME_CACHED="$2"
+    shift # past argument
+    shift # past value
+    ;;
+    *)    # unknown option
+    shift # past argument
+    ;;
+esac
+done
+
+
+#echo "COMMAND: ${COMMAND}"
+#echo "TIME: ${TIME_CACHED}"
+
+
+COMMAND_HASH=$(echo ${PWD} ${COMMAND} | md5sum |  awk '{ print $1 }')
+#echo "${COMMAND_HASH}"
+
+
+TIME_FILE=~/.cache/cached-${COMMAND_HASH}-time
+CACHE_FILE=~/.cache/cached-${COMMAND_HASH}-cache
+
+
+if [ ! -f "$TIME_FILE" ]; then
+    echo "0" > ${TIME_FILE}
+fi
+
+
+if [ ! -f "$CACHE_FILE" ]; then
+    echo "0" > ${CACHE_FILE}
+fi
+
+#Only check update every hour
+TIME=$(date +%s)
+OLD_TIME=$(cat ${TIME_FILE})
+TIME_DIFF=$(expr ${TIME} - ${OLD_TIME})
+
+
+if [ $TIME_DIFF -gt ${TIME_CACHED} ]; then
+	UPDATES=$(bash -c "${COMMAND}")
+	echo "${UPDATES}" > ${CACHE_FILE}
+	echo $TIME > $TIME_FILE
+else
+	UPDATES=$(cat ${CACHE_FILE})
+fi
+
+echo $UPDATES

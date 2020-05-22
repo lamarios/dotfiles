@@ -357,8 +357,8 @@ bindsym $mod+j exec rofi-jira
 bindsym $mod+Shift+d exec myrmidon
 
  
-bindsym $mod+print   scrot -d 1 -e 'shotwell $f &' "$home/pix/%y-%m-%d_%h-%m-%s.png" 
-bindsym $mod+shift+print  scrot -u -d 1 -e 'shotwell $f &' "$home/pix/%y-%m-%d_%h-%m-%s.png" 
+bindsym $mod+Print  exec  scrot -d 1 -e 'shotwell $f &'  "/home/logit/pix/%y-%m-%d_%h-%m-%s.png" 
+bindsym $mod+shift+Print exec  scrot -u -d 1 -e 'shotwell $f &' "/home/logit/pix/%y-%m-%d_%h-%m-%s.png" 
 
 #bindsym $mod+print exec pkill picom &&  scrot -d 1 -e 'shotwell $f &' "$home/pix/%y-%m-%d_%h-%m-%s.png" && picom &
 #bindsym $mod+shift+print exec pkill picom && scrot -u -d 1 -e 'shotwell $f &' "$home/pix/%y-%m-%d_%h-%m-%s.png" && picom &
@@ -423,8 +423,9 @@ smart_gaps on
 ###Start up
 exec --no-startup-id "/usr/lib/mate-settings-daemon/mate-settings-daemon"
 #exec_always --no-startup-id  "wal -i ~/pix/Wallpapers/ -o wal-set"
-exec_always --no-startup-id  wal -i ~/pix/Wallpapers/
+#exec_always --no-startup-id  wal -i ~/pix/Wallpapers/
 #exec_always --no-startup-id  pkill picom; picom
+exec_always --no-startup-id pkill bain; bain arch
 
 #exec --no-startup-id nm-applet
 exec --no-startup-id skype
@@ -433,6 +434,7 @@ exec --no-startup-id thunderbird
 exec --no-startup-id mate-power-manager
 exec --no-startup-id mate-volume-control-applet
 exec --no-startup-id indicator-sound-switcher
+exec --no-startup-id fbxkb
 exec --no-startup-id clipit
 exec --no-startup-id /opt/OpenDrive/odrive
 exec --no-startup-id sleep 10 && xmodmap ~/.Xmodmap

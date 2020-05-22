@@ -32,7 +32,7 @@ else
 	 fi
 
 	echo "${URL} is not url, using google search instead"
-	URL="https://searx.ftpix.com?q=${ENTRIES}"
+	URL="https://www.google.com/search?client=firefox-b-d&q=${ENTRIES}"
 fi
 
 DEV_EDITION=$(ps aux | grep '[f]irefox-developer-edition' | wc -l)
