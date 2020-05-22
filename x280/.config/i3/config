@@ -419,6 +419,8 @@ exec_always --no-startup-id  "wal -i ~/pix/Wallpapers/"
 
 #exec --no-startup-id fluxgui
 exec --no-startup-id mate-power-manager
-exec --no-startup-id mate-volume-control-applet
+exec --no-startup-id mate-volume-control-status-icon
+exec --no-startup-id fbxkb
+exec --no-startup-id indicator-sound-switcher
 exec --no-startup-id xflux -l 3.1 -g 101.6
 exec_always --no-startup-id g610-led -a 60
