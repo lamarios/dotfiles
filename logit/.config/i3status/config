@@ -19,7 +19,7 @@ order += "cpu_usage"
 order += "ethernet enp0s31f6"
 #order += "ethernet tun0"
 order += "ethernet wg0"
-order += "ethernet nebula1"
+order += "ethernet wg1"
 
 
 
@@ -62,7 +62,7 @@ ethernet tun0{
 
 }
 
-ethernet nebula1{
+ethernet wg0{
 
         # if you use %speed, i3status requires the cap_net_admin capability
 
@@ -72,7 +72,7 @@ ethernet nebula1{
 
 }
 
-ethernet wg0{
+ethernet wg1{
 
         # if you use %speed, i3status requires the cap_net_admin capability
 
